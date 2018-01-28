@@ -14,5 +14,5 @@ import 'rxjs/add/observable/throw';
 
  
  }
-export const baseURL="http://api.openweathermap.org/data/2.5/forecast?q=";
+export const baseURL="https://api.openweathermap.org/data/2.5/forecast?q=";
 export const apiid="&appid=369fb96107ab346b44351ae7d37c1b40&units=metric";
