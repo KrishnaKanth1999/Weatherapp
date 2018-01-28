@@ -1,0 +1,112 @@
+
+ <div   id="home"></div>
+<div class="container">
+<form novalidate [formGroup]="feedbackForm" class="form-inline" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label>Enter the Country:  </label>
+      <select class="form-control" formControlName="country"  [(ngModel)]="selectedCountry" (click)="getCities()">
+        <option>None</option>
+        <option *ngFor="let country of countriesNames" [value]="country" >{{country}}</option>
+      </select>
+    </div>
+  
+    <div class="form-group ml-3" *ngIf="selectedCountry">
+        <label>Enter the City:</label>
+      <select class="form-control" formControlName="city"  type="text"  [(ngModel)]="selectedCity">
+        <option>None</option>
+        <option *ngFor="let city of cityNames" [value]="city" >{{city}}</option>
+      </select>
+    </div>
+ 
+
+      <button class="btn btn-primary ml-3" type="submit" [disabled]="feedbackForm.invalid" >Submit</button>
+</form>
+
+  </div>
+  <div class="container">
+    
+  
+  
+    <div class="row">
+        <div class="col-sm-12 col-12  offset-sm-1 mt-4"> 
+        <div class="card" >
+            <div class="card-header bg-primary">
+             <h1>Location</h1> 
+            </div>
+            <div class="card-block">
+              <h4 class="card-title" *ngIf="cityName">{{cityName}},{{countryName}} <img src="http://www.countryflags.io/{{countryCode}}/flat/64.png"></h4>
+              <h5 class="card-text">Latitude:{{lat}}</h5>
+              <h5 class="card-text">Longitude:{{long}} </h5>
+              <h5 class="card-text">Population:{{population}}</h5>
+              
+        </div>
+        </div></div>
+  
+      <div class="col-sm-5 mt-5 offset-1">
+  <div class="card" >
+      <div class="card-header bg-primary">
+       <h2> Date:{{dates[0] | date}}</h2>
+      </div>
+      <div class="card-block">
+        <h4 class="card-title "><b>{{main[0]}}</b><img src="http://openweathermap.org/img/w/{{icons[0]}}.png" *ngIf="icons.length!=0"></h4>
+        <h5 class="card-text">Temp:{{temp[0]}}°C</h5>
+        <h5 class="card-text">Pressure:{{pressure[0]}} hPa</h5>
+        <h5 class="card-text">Humidity:{{humidity[0]}}%</h5>
+        <h5 class="card-text">Wind Speed:{{wind[0]}} m/s</h5>
+  </div>
+  </div></div>
+  <div class="col-sm-5 offset-1 mt-5">
+  <div class="card  " >
+      <div class="card-header bg-primary">
+       <h2> Date:{{dates[1] | date}}</h2>
+      </div>
+      <div class="card-block"  >
+        <h4 class="card-title"><b>{{main[1]}}</b><img src="http://openweathermap.org/img/w/{{icons[1]}}.png" *ngIf="icons.length!=0"></h4>
+        <h5 class="card-text">Temp:{{temp[1]}}°C</h5>
+        <h5 class="card-text">Pressure:{{pressure[1]}} hPa</h5>
+        <h5 class="card-text">Humidity:{{humidity[1]}}%</h5>
+        <h5 class="card-text">Wind Speed:{{wind[1]}} m/s</h5>
+  </div>
+</div></div>
+<div class="col-sm-5 offset-1 mt-5">
+  <div class="card">
+      <div class="card-header bg-primary">
+<h2>Date:{{dates[2] | date}}</h2>
+      </div>
+      <div class="card-block">
+        <h4 class="card-title"><b>{{main[2]}}</b><img src="http://openweathermap.org/img/w/{{icons[2]}}.png" *ngIf="icons.length!=0"></h4>
+        <h5 class="card-text">Temp:{{temp[2]}}°C</h5>
+        <h5 class="card-text">Pressure:{{pressure[2]}} hPa</h5>
+        <h5 class="card-text">Humidity:{{humidity[2]}}%</h5>
+        <h5 class="card-text">Wind Speed:{{wind[2]}} m/s</h5>
+  </div>
+</div></div>
+<div class="col-sm-5 offset-1 mt-5">
+  <div class="card">
+      <div class="card-header bg-primary">
+       <h2> Date:{{dates[3] | date}}</h2>
+      </div>
+      <div class="card-block">
+        <h4 class="card-title"><b>{{main[3]}}</b><img src="http://openweathermap.org/img/w/{{icons[3]}}.png" *ngIf="icons.length!=0"></h4>
+        <h5 class="card-text">Temp:{{temp[3]}}°C</h5>
+        <h5 class="card-text">Pressure:{{pressure[3]}} hPa</h5>
+        <h5 class="card-text">Humidity:{{humidity[3]}}%</h5>
+        <h5 class="card-text">Wind Speed:{{wind[3]}} m/s</h5>
+  </div>
+</div></div>
+<div class="col-sm-5 col-12 offset-sm-4 mt-5 ">
+  <div class="card">
+      <div class="card-header bg-primary">
+        <h2>Date:{{dates[4] | date}}</h2>
+      </div>
+      <div class="card-block">
+        <h4 class="card-title"><b>{{main[4]}}</b><img src="http://openweathermap.org/img/w/{{icons[4]}}.png" *ngIf="icons.length!=0"></h4>
+        <h5 class="card-text">Temp:{{temp[4]}}°C</h5>
+        <h5 class="card-text">Pressure:{{pressure[4]}} hPa</h5>
+        <h5 class="card-text">Humidity:{{humidity[4]}}%</h5>
+        <h5 class="card-text">Wind Speed:{{wind[4]}} m/s</h5>
+  </div>
+</div></div>
+
+
+</div></div>
